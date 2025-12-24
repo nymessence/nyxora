@@ -2,6 +2,10 @@
 
 Nyxora is a pioneering quantum-hybrid cryptocurrency that combines traditional Proof-of-Stake (PoS) consensus with innovative Proof-of-Quantum (PoQ) mechanisms. This unique architecture leverages quantum computational advantages to enhance blockchain security, randomness, and scalability.
 
+## Author
+
+Nymessence <nymessence@gmail.com>
+
 ## Features
 
 - **Hybrid Consensus**: Combines Proof-of-Stake (PoS) and Proof-of-Quantum (PoQ) mechanisms
@@ -56,7 +60,7 @@ pip install qiskit numpy
 ./target/release/nyxora-wallet generate
 
 # Start a validator node
-./target/release/nyxora-node --validator --port 8080
+./target/release/nyxora-node --validator --port 33333
 ```
 
 ### Docker Deployment
@@ -98,13 +102,13 @@ docker-compose up -d
 
 ```bash
 # Start as a validator node
-./target/release/nyxora-node --validator --port 8080
+./target/release/nyxora-node --validator --port 33333
 
 # Start as a regular node
-./target/release/nyxora-node --port 8080
+./target/release/nyxora-node --port 33333
 
 # Use custom configuration
-./target/release/nyxora-node --config config.json --port 8080
+./target/release/nyxora-node --config config.json --port 33333
 ```
 
 ## Tokenomics

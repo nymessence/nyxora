@@ -8,7 +8,7 @@ Type=simple
 User=nyxora
 Group=nyxora
 WorkingDirectory=/opt/nyxora
-ExecStart=/opt/nyxora/nyxora-node --validator --config /etc/nyxora/config.json
+ExecStart=/opt/nyxora/nyxora-node --validator --port 33333 --config /etc/nyxora/config.json
 Restart=always
 RestartSec=10
 

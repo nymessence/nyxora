@@ -1,5 +1,8 @@
 # Nyxora-Forge Agent Memory & Execution Log
 
+## Author
+Nymessence <nymessence@gmail.com>
+
 ## Architecture Overview
 
 Nyxora is a mystical, quantum-hybrid cryptocurrency combining Proof-of-Stake (PoS) and Proof-of-Quantum (PoQ) consensus mechanisms. The architecture includes:

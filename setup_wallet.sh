@@ -42,7 +42,7 @@ chmod 600 "$WALLET_FILE"
 
 echo "Step 4: Displaying wallet information..."
 # Show the wallet address
-WALLET_ADDR=$(/opt/nyxora/nyxora-wallet address)
+WALLET_ADDR=$(/opt/nyxora/nyxora-wallet address --file "$WALLET_FILE")
 echo "✓ Wallet Address: $WALLET_ADDR"
 
 echo "Step 5: Creating configuration file..."
@@ -55,7 +55,7 @@ cat > "$CONFIG_FILE" << EOF
   "nft_dir": "$NYXORA_DIR/nfts",
   "keys_dir": "$NYXORA_DIR/keys",
   "logs_dir": "$NYXORA_DIR/logs",
-  "node_api_url": "http://localhost:8080",
+  "node_api_url": "http://localhost:33333",
   "default_stake_amount": 1000,
   "quantum_enabled": true
 }

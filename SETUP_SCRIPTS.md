@@ -4,10 +4,9 @@ This directory contains shell scripts to help set up and run the Nyxora quantum-
 
 ## Scripts
 
-### 1. setup_nyxora.sh
+### 1. install_nyxora.sh
 This script will:
-- Clone or update the Nyxora repository
-- Build the binaries (nyxora-node and nyxora-wallet)
+- Build the binaries (nyxora-node and nyxora-wallet) from local source
 - Install Python dependencies for the quantum layer
 - Install the binaries to `/opt/nyxora/`
 - Set up the systemd service for the Nyxora node
@@ -25,12 +24,18 @@ This script will:
 
 ### To set up the complete system:
 
-1. Run the setup script to compile and install the system service:
+1. First, clone the repository:
 ```bash
-./setup_nyxora.sh
+git clone https://github.com/nymessence/nyxora.git
+cd nyxora
 ```
 
-2. After the system is set up, run the wallet script to create your wallet:
+2. Run the installation script to compile and install the system service:
+```bash
+./install_nyxora.sh
+```
+
+3. After the system is set up, run the wallet script to create your wallet:
 ```bash
 ./setup_wallet.sh
 ```
