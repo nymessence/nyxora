@@ -21,16 +21,16 @@ Initial repository structure created. Ready to begin implementation of core comp
 
 - [x] Initialize repository structure
 - [x] Create agent memory file (.qwen/AGENT.md)
-- [ ] Set up Docker with basic Dockerfile + docker-compose for test node
-- [ ] Begin CLI wallet implementation
-- [ ] Implement blockchain core (PoS consensus)
-- [ ] Implement quantum layer (PoQ consensus)
-- [ ] Create validator node
-- [ ] Develop smart contracts
-- [ ] Write documentation
-- [ ] Create whitepaper
-- [ ] Implement tests
-- [ ] Package as installable service
+- [x] Set up Docker with basic Dockerfile + docker-compose for test node
+- [x] Begin CLI wallet implementation
+- [x] Implement blockchain core (PoS consensus)
+- [x] Implement quantum layer (PoQ consensus)
+- [x] Create validator node
+- [x] Develop smart contracts
+- [x] Write documentation
+- [x] Create whitepaper
+- [x] Implement tests
+- [x] Package as installable service
 
 ## Known Bugs & Open Questions
 

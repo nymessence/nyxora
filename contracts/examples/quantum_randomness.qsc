@@ -1,0 +1,61 @@
+// contracts/examples/quantum_randomness.qsc
+// Quantum Randomness Smart Contract for Nyxora
+
+// This contract requests quantum circuit execution, verifies the quantum proof,
+// and stores the randomness on-chain.
+
+contract QuantumRandomness {
+    address owner;
+    mapping(uint256 => bytes32) public randomness;
+    uint256 public requestCount;
+    
+    event RandomnessRequested(uint256 indexed requestId, address requester);
+    event RandomnessFulfilled(uint256 indexed requestId, bytes32 randomValue, address verifier);
+    
+    constructor() {
+        owner = msg.sender;
+        requestCount = 0;
+    }
+    
+    function requestRandomness() public returns (uint256 requestId) {
+        requestId = requestCount++;
+        emit RandomnessRequested(requestId, msg.sender);
+        
+        // In a real implementation, this would trigger a quantum computation
+        // via an oracle or off-chain worker that interfaces with quantum hardware
+    }
+    
+    function fulfillRandomness(
+        uint256 requestId,
+        bytes32 randomValue,
+        bytes memory quantumProof
+    ) public {
+        // Verify the quantum proof using the PoQ verification algorithm
+        require(verifyQuantumProof(quantumProof), "Invalid quantum proof");
+        
+        // Store the randomness
+        randomness[requestId] = randomValue;
+        
+        emit RandomnessFulfilled(requestId, randomValue, msg.sender);
+    }
+    
+    function verifyQuantumProof(bytes memory proof) internal view returns (bool) {
+        // In a real implementation, this would call the quantum proof verification
+        // logic implemented in the consensus layer.
+        // For now, we'll simulate the verification.
+        
+        // A real implementation would:
+        // 1. Parse the quantum proof (circuit_descriptor, measurement_results, proof_artifact)
+        // 2. Verify the proof artifact matches the circuit descriptor and measurement results
+        // 3. Validate the circuit structure matches expected hexagonal Hadamard-CNOT pattern
+        // 4. Ensure the proof hasn't been used before (replay attack prevention)
+        
+        // For simulation purposes, we'll just check that the proof is not empty
+        return proof.length > 0;
+    }
+    
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only owner can call this function");
+        _;
+    }
+}
